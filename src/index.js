@@ -7,7 +7,7 @@ const productRoutes = require("./routes/products.routes");
 require('./utils/mongoose');
 
 fastify.get('/', (request, reply) => {
-    reply.send({hello: "world"});
+    reply.send({hello: "world!!!33"});
 });
 
 productRoutes.forEach(route => {
@@ -15,7 +15,7 @@ productRoutes.forEach(route => {
 });
 
 const start = async () => {
-    await fastify.listen(3000)
+    await fastify.listen({port: 3000, host: '0.0.0.0'})
     fastify.log.info(`server listening on ${fastify.server.address().port}`);
 }
 
